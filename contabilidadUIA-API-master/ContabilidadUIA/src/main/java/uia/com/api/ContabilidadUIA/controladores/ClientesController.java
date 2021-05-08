@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -16,7 +17,7 @@ import uia.com.api.ContabilidadUIA.modelo.clientes.InfoUIA;
 
 
 @RestController
-@CrossOrigin(origins = "*", methods= {RequestMethod.GET,RequestMethod.POST})
+@CrossOrigin(origins = "*", methods= {RequestMethod.GET,RequestMethod.POST,RequestMethod.PUT})
 
 public class ClientesController {
 	  
@@ -59,6 +60,13 @@ public class ClientesController {
 			  System.out.println("Saludos desde agregaCliente()");
 		        return ResponseEntity.ok((InfoUIA)clientes.agregaCatalogo(newCliente));
 	    }
+	  
+	  @RequestMapping(value="clientes/{clientename}",method = RequestMethod.PUT)
+	    public ResponseEntity<InfoUIA> actualizarCliente(@RequestBody String clientename)  throws  ClassNotFoundException{
+		  System.out.println("Saludos desde clienteByname()");
+	        return ResponseEntity.ok((InfoUIA)clientes.getProveedor(clientename));
+		  
+	  }
 
 	  
 	}

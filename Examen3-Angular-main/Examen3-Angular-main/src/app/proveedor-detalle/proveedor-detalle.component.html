@@ -1,15 +1,18 @@
-<div *ngIf="proveedor">  
-    <h2>Edición de {{proveedor.name | uppercase}}</h2>
-    <div><span>id: </span>{{proveedor.id}}</div>
+<div *ngIf="proveedor">
+  <h2>Edición de {{proveedor.name | uppercase}}</h2>
+  <div><span>id: </span>{{proveedor.id}}</div>
 
-    <mat-form-field appearance="fill">
-      <mat-label>Nombre del Proveedor:</mat-label>
-      <input matInput id="proveedor-name" [(ngModel)]="proveedor.name" placeholder="name">
-    </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Nombre del Proveedor:</mat-label>
+    <input matInput id="proveedor-name" [(ngModel)]="proveedor.name" placeholder="name">
+  </mat-form-field>
 
-    <div>
-      <label for="proveedor-id">Id Proveedor: </label>
-      <input id="proveedor-id" [(ngModel)]="proveedor.id" placeholder="id">
-    </div>   
+  <div>
+    <label for="proveedor-id">Id Proveedor: </label>
+    <input id="proveedor-id" [(ngModel)]="proveedor.id" placeholder="id">
+  </div>
+  <button class="add-button" (click)="actuzalizar(proveedorName.value, proveedorId.value ); proveedorName.value=''; proveedorId.value=''">
+    Modifique el proveedor
+  </button>
 </div>
 

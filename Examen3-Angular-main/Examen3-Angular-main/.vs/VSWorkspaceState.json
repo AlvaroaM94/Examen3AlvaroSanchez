@@ -3,8 +3,9 @@
     "",
     "\\src",
     "\\src\\app",
+    "\\src\\app\\proveedor-detalle",
     "\\src\\app\\proveedores"
   ],
-  "SelectedNode": "\\src\\app\\proveedores",
+  "SelectedNode": "\\src\\app\\proveedor.service.ts",
   "PreviewInSolutionExplorer": false
 }
